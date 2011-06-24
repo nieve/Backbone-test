@@ -18,8 +18,8 @@ namespace BackboneTest
 
             routes.MapRoute(
                 "contentAutocomplete",
-                "contentitem/{data}",
-                new {controller = "ContentItem", action = "Index"}
+                "content/{data}",
+                new {controller = "Content", action = "Index"}
             );
 
             routes.MapRoute(

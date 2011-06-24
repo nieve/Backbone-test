@@ -5,33 +5,38 @@ $(function() {
         setData: function(data) {
             this.set({ data: data });
             this.trigger("dataSet");
-        },
-        url: function() {
-            return '/ContentItem/' + this.get("data");
         }
     });
 
+    var Content = Backbone.Collection.extend({
+        model: ContentItem,
+        url: function() { return '/content/' + this.first().get('data'); }
+    });
+
     var SomeView = Backbone.View.extend({
-        el: "#input",
+        el: "form",
 
         events: { "keyup #input": "autocomplete" },
 
         initialize: function() {
             _.bindAll(this, "autocomplete");
-            $("#input").keyup(this.autocomplete);
+            this.input = $("#input");
         },
 
         autocomplete: function() {
-            var input = $("#input").val();
-            if (input.length >= 3) {
-                this.model.set({ data: input });
-                this.model.fetch({ success: function(model, result) {
-                    $("#input").val(model.get("data"));
+            var input = this.input;
+            var userInput = input.val();
+            if (userInput.length >= 3) {
+                this.model.set({ data: userInput });
+                this.collection.refresh(this.model);
+                this.collection.fetch({ success: function(collection, result) {
+                    alert(JSON.stringify(collection));
                 }});
             }
         }
     });
 
     var item = new ContentItem();
-    var someView = new SomeView({ model: item });
-});	
+    var content = new Content();
+    var someView = new SomeView({ model: item, collection: content });
+});

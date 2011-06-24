@@ -62,7 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ContentItemController.cs" />
+    <Compile Include="Controllers\ContentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -72,16 +72,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Scripts\backbone-min.js" />
+    <Content Include="Scripts\backbone.js" />
+    <Content Include="Scripts\jquery-1.6.1.min.js" />
     <Content Include="Scripts\json2.js" />
     <Content Include="Scripts\underscore-min.js" />
     <Content Include="Scripts\Index.bkbn.js" />
     <Content Include="Web.config" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\jquery-1.3.2.js" />
-    <Content Include="Scripts\jquery-1.3.2.min.js" />
-    <Content Include="Scripts\jquery-1.3.2-vsdoc.js" />
-    <Content Include="Scripts\jquery-1.3.2.min-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate-vsdoc.js" />
