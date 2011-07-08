@@ -11,6 +11,7 @@
 	
     <h2><%= Html.Encode(ViewData["Message"]) %></h2>
     <form action="/login" id="login-form">
-      Add content item: <input type="text" id="input" />
+      Search for values: <input type="text" id="input" />
+      <div id="results"></div>
     </form>
 </asp:Content>

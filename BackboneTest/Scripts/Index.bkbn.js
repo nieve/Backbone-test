@@ -1,42 +1,39 @@
 ﻿
 $(function() {
 
-    var ContentItem = Backbone.Model.extend({
-        setData: function(data) {
-            this.set({ data: data });
-            this.trigger("dataSet");
-        }
-    });
+    var Translation = Backbone.Model.extend({});
+    var Search = Backbone.Model.extend({});
 
-    var Content = Backbone.Collection.extend({
-        model: ContentItem,
-        url: function() { return '/content/' + this.first().get('data'); }
+    var Translations = Backbone.Collection.extend({
+        model: Translation,
+        url: function() { return '/search'; } // + $("#input").val()
     });
 
     var SomeView = Backbone.View.extend({
         el: "form",
+        model: new Search(),
+
+        collection: new Translations(),
 
         events: { "keyup #input": "autocomplete" },
 
         initialize: function() {
-            _.bindAll(this, "autocomplete");
+            _.bindAll(this, "autocomplete", "displayResults");
             this.input = $("#input");
+            this.collection.bind('reset', this.displayResults);
+        },
+
+        displayResults: function() {
+            alert(JSON.stringify(this.collection));//TODO: render collection w/template
         },
 
         autocomplete: function() {
-            var input = this.input;
-            var userInput = input.val();
-            if (userInput.length >= 3) {
-                this.model.set({ data: userInput });
-                this.collection.refresh(this.model);
-                this.collection.fetch({ success: function(collection, result) {
-                    alert(JSON.stringify(collection));
-                }});
+            var searchTerm = this.input.val();
+            if (searchTerm.length >= 3) {
+                this.collection.fetch({ data: jQuery.param({ term: searchTerm }) });
             }
         }
     });
 
-    var item = new ContentItem();
-    var content = new Content();
-    var someView = new SomeView({ model: item, collection: content });
+    var someView = new SomeView();
 });

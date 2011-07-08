@@ -7,7 +7,7 @@ namespace BackboneTest.Controllers
     {
         public ActionResult Index()
         {
-            ViewData["Message"] = "Content";
+            ViewData["Message"] = "Translations Manager";
 
             return View();
         }
