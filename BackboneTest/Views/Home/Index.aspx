@@ -4,8 +4,12 @@
     Home Page
 </asp:Content>
 <asp:Content ID="js" ContentPlaceHolderID="JsContent" runat="server">
-    <script src="../../Scripts/jquery.tmpl.min.js" type="text/javascript"></script>
-    <script src="../../Scripts/Index.bkbn.js" type="text/javascript"></script>
+    <script src="../../Scripts/lib/jquery-1.6.1.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/lib/jquery.tmpl.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/lib/underscore-min.js" type="text/javascript"></script>
+    <script src="../../Scripts/lib/backbone.js" type="text/javascript"></script>
+    <script src="../../Scripts/app/namespace.js" type="text/javascript"></script>
+    <script src="../../Scripts/translation/Index.bkbn.js" type="text/javascript"></script>
 </asp:Content>
 
 <asp:Content ID="indexContent" ContentPlaceHolderID="MainContent" runat="server">
@@ -17,7 +21,8 @@
     </form>
     <script id="resultsDisplay" type="text/x-jquery-tmpl">
         <li>
-            Key: ${key} / value: <input type="text" value="${value}" />
+            Key: ${Key} <br/>
+            value: <input type="text" value="${Value}" />
         </li>
     </script>
 </asp:Content>

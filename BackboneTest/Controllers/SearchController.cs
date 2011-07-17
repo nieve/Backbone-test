@@ -6,14 +6,13 @@ using Raven.Client.Linq;
 
 namespace BackboneTest.Controllers
 {
-    public class ContentController : Controller
+    public class SearchController : Controller
     {
         private DocumentStore documentStore;
 
-        public ContentController()
+        public SearchController()
         {
-            documentStore = new DocumentStore { Url = "http://localhost:8080" };
-            documentStore.Initialize();
+            documentStore = StoreSingleton.Instance;
         }
 
         public JsonResult Index(string term)
@@ -22,12 +21,12 @@ namespace BackboneTest.Controllers
             {
                 var text = "*" + RavenQuery.Escape(term) + "*";
                 var query = session.Query<TranslationDto.Translation>()
-                 .Where(x => x.Value.Contains(text))
+                 .Where(x => x.Key.Contains(text))
                  .Take(5)
                  .ToList();
                 return new JsonResult
                 {
-                    Data = new[]{new {key="MyLn.Hello", value=term + " Hello"}}, //query
+                    Data = query,
                     JsonRequestBehavior = JsonRequestBehavior.AllowGet
                 };
             }

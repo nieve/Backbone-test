@@ -1,4 +1,10 @@
-﻿
+﻿/// <reference path="../lib/backbone.js" />
+/// <reference path="../lib/jquery-1.6.1.min.js" />
+/// <reference path="../lib/jquery.tmpl.min.js" />
+/// <reference path="../lib/underscore-min.js" />
+/// <reference path="../lib/json2.js" />
+/// <reference path="../app/namespace.js" />
+
 $(function () {
 
     var Translation = Backbone.Model.extend({});
@@ -39,7 +45,7 @@ $(function () {
 
         autocomplete: function () {
             var searchTerm = this.input.val();
-            if (searchTerm.length >= 3) {
+            if (searchTerm.length >= 1) {
                 this.collection.fetch({ data: jQuery.param({ term: searchTerm }) });
             }
         }
