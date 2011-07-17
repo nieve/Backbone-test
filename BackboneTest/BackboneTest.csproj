@@ -38,6 +38,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Web.Mvc">
+      <HintPath>..\lib\Microsoft.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\..\..\..\..\..\RavenDB\Client\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -75,6 +78,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TranslationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -84,13 +88,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="images\save.png" />
     <Content Include="Scripts\app\namespace.js" />
     <Content Include="Scripts\lib\backbone.js" />
     <Content Include="Scripts\lib\jquery-1.6.1.min.js" />
     <Content Include="Scripts\lib\jquery.tmpl.min.js" />
     <Content Include="Scripts\lib\json2.js" />
     <Content Include="Scripts\lib\underscore-min.js" />
-    <Content Include="Scripts\translation\Index.bkbn.js" />
+    <Content Include="Scripts\translation\models.js" />
+    <Content Include="Scripts\translation\translationManagerView.js" />
+    <Content Include="Scripts\translation\translationView.js" />
     <Content Include="Web.config" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\lib\MicrosoftAjax.js" />

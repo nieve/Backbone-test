@@ -22,7 +22,6 @@ namespace BackboneTest.Controllers
                 var text = "*" + RavenQuery.Escape(term) + "*";
                 var query = session.Query<TranslationDto.Translation>()
                  .Where(x => x.Key.Contains(text))
-                 .Take(5)
                  .ToList();
                 return new JsonResult
                 {

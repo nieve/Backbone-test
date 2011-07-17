@@ -9,7 +9,9 @@
     <script src="../../Scripts/lib/underscore-min.js" type="text/javascript"></script>
     <script src="../../Scripts/lib/backbone.js" type="text/javascript"></script>
     <script src="../../Scripts/app/namespace.js" type="text/javascript"></script>
-    <script src="../../Scripts/translation/Index.bkbn.js" type="text/javascript"></script>
+    <script src="../../Scripts/translation/models.js" type="text/javascript"></script>
+    <script src="../../Scripts/translation/translationView.js" type="text/javascript"></script>
+    <script src="../../Scripts/translation/translationManagerView.js" type="text/javascript"></script>
 </asp:Content>
 
 <asp:Content ID="indexContent" ContentPlaceHolderID="MainContent" runat="server">
@@ -19,10 +21,15 @@
       Search for values: <input type="text" id="input" />
       <ul id="results"> </ul>
     </form>
+    <script type="text/javascript">
+        $(function () {
+            var someView = new this.TranslationManager.TranslationManagerView();
+        });
+    </script>
     <script id="resultsDisplay" type="text/x-jquery-tmpl">
-        <li>
+        <p class="translationValue">
             Key: ${Key} <br/>
-            value: <input type="text" value="${Value}" />
-        </li>
+            value: <input class="valueInput" type="text" value="${Value}" /> <a class="button save">save</a>
+        </p>
     </script>
 </asp:Content>

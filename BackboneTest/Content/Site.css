@@ -338,3 +338,39 @@ div#title
 {
     width: 6em;
 }
+
+.translationValue
+{
+	width: 300px;
+	border-color:Black;
+	border-width:thin;
+	border-style:solid;
+	margin:4px 4px 4px 4px;
+	padding:2px 2px 5px 2px;
+}
+
+.button
+{
+	display: block;
+	float: right;
+	margin: 0 0.5em 0.7em 0;
+	padding: 1px 1px 1px 17px; /* Links */
+	border: 1px solid #dedede;
+	border-top: 1px solid #eee;
+	border-left: 1px solid #eee;
+	background-color: #e6e6e6;
+	font-family: "Lucida Grande" , Tahoma, Arial, Verdana, sans-serif;
+	font-size: 100%;
+	line-height: 130%;
+	text-decoration: none;
+	font-weight: bold;
+	color: #565656;
+	cursor: pointer;
+	background-position: 0px;
+	background-repeat: no-repeat;
+}
+
+.save
+{
+	background-image:url(../images/save.png);
+}

@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Raven.Client.Document;
 using TranslationDto;
+using JsonValueProviderFactory = Microsoft.Web.Mvc.JsonValueProviderFactory;
 
 namespace BackboneTest
 {
@@ -23,6 +22,12 @@ namespace BackboneTest
             );
 
             routes.MapRoute(
+                "translation",
+                "translation/",
+                new {controller = "translation", action = "index"}
+            );
+
+            routes.MapRoute(
                 "Default",                                              // Route name
                 "{controller}/{action}/{id}",                           // URL with parameters
                 new { controller = "Home", action = "Index", id = "" }  // Parameter defaults
@@ -35,6 +40,7 @@ namespace BackboneTest
             AreaRegistration.RegisterAllAreas();
             StoreSingleton.Init();
             RegisterRoutes(RouteTable.Routes);
+            ValueProviderFactories.Factories.Add(new JsonValueProviderFactory());
         }
     }
 
