@@ -96,6 +96,7 @@
     <Content Include="Scripts\lib\json2.js" />
     <Content Include="Scripts\lib\underscore-min.js" />
     <Content Include="Scripts\translation\models.js" />
+    <Content Include="Scripts\translation\sessionView.js" />
     <Content Include="Scripts\translation\translationManagerView.js" />
     <Content Include="Scripts\translation\translationView.js" />
     <Content Include="Web.config" />

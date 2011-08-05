@@ -339,6 +339,11 @@ div#title
     width: 6em;
 }
 
+.rightSide
+{
+	width:400px;
+}
+
 .translationValue
 {
 	width: 300px;
@@ -347,6 +352,33 @@ div#title
 	border-style:solid;
 	margin:4px 4px 4px 4px;
 	padding:2px 2px 5px 2px;
+}
+
+.searchWindow
+{
+	width: 350px;
+	float: left;
+	margin-bottom: 10px;
+	padding-bottom:10px;
+    background-color: #fff;
+}
+
+hr
+{
+	margin-top:40px;
+}
+
+.sessionWindow
+{
+	width:300px;
+	border-color:Black;
+	border-width:thin;
+	border-style:solid;
+	padding:2px 2px 2px 2px;
+	margin-left:20px;
+	left: 430px;
+	top: 130px;
+	position: absolute;
 }
 
 .button

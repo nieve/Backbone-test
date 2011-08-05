@@ -11,19 +11,32 @@
     <script src="../../Scripts/app/namespace.js" type="text/javascript"></script>
     <script src="../../Scripts/translation/models.js" type="text/javascript"></script>
     <script src="../../Scripts/translation/translationView.js" type="text/javascript"></script>
+    <script src="../../Scripts/translation/sessionView.js" type="text/javascript"></script>
     <script src="../../Scripts/translation/translationManagerView.js" type="text/javascript"></script>
 </asp:Content>
 
 <asp:Content ID="indexContent" ContentPlaceHolderID="MainContent" runat="server">
 	
     <h2><%= Html.Encode(ViewData["Message"]) %></h2>
-    <form action="/login" id="login-form">
-      Search for values: <input type="text" id="input" />
-      <ul id="results"> </ul>
+    <form id="login-form" >
+    <div class="rightSide">
+        <div class="searchWindow">
+          Search for values: <input type="text" id="input" />
+        </div>
+        <div class="clear"></div>
+        <div>
+            <ul id="results"> </ul>
+        </div>
+    </div>
+    <div id="translationsSessionForm" class="sessionWindow">
+        No translations are currently flagged for saving.
+    </div>
     </form>
     <script type="text/javascript">
         $(function () {
-            var someView = new this.TranslationManager.TranslationManagerView();
+            var vents = _.extend({}, Backbone.Events);
+            var sessionView = new this.TranslationManager.SessionView({ vents: vents });
+            var someView = new this.TranslationManager.TranslationManagerView({ vents: vents });
         });
     </script>
     <script id="resultsDisplay" type="text/x-jquery-tmpl">

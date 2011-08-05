@@ -60,7 +60,10 @@ namespace BackboneTest
         {
             using (var session = documentStore.OpenSession())
             {
-                var dataExist = session.Query<Translation>().Any();
+                var dataExist = false;
+                try {
+                    dataExist = session.Query<Translation>().Any();
+                } catch{}
                 
                 if (!dataExist) {
 					var random = new Random();

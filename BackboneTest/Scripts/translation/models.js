@@ -4,6 +4,9 @@
             if (this.get('Id')) return false;
             else return true;
         },
+        to_s: function () {
+            return 'key: ' + this.get('Key') + ' value: ' + this.get('Value') + '\r\n';
+        },
         url: function () { return '/translation'; }
     });
     this.TranslationManager.Search = Backbone.Model.extend({});
