@@ -87,11 +87,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\tipsy.css" />
     <Content Include="Global.asax" />
     <Content Include="images\save.png" />
     <Content Include="Scripts\app\namespace.js" />
     <Content Include="Scripts\lib\backbone.js" />
     <Content Include="Scripts\lib\jquery-1.6.1.min.js" />
+    <Content Include="Scripts\lib\jquery.tipsy.js" />
     <Content Include="Scripts\lib\jquery.tmpl.min.js" />
     <Content Include="Scripts\lib\json2.js" />
     <Content Include="Scripts\lib\underscore-min.js" />

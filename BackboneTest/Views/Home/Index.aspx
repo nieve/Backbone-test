@@ -4,10 +4,12 @@
     Home Page
 </asp:Content>
 <asp:Content ID="js" ContentPlaceHolderID="JsContent" runat="server">
+    <link href="../../Content/tipsy.css" rel="stylesheet" type="text/css" />
     <script src="../../Scripts/lib/jquery-1.6.1.min.js" type="text/javascript"></script>
     <script src="../../Scripts/lib/jquery.tmpl.min.js" type="text/javascript"></script>
     <script src="../../Scripts/lib/underscore-min.js" type="text/javascript"></script>
     <script src="../../Scripts/lib/backbone.js" type="text/javascript"></script>
+    <script src="../../Scripts/lib/jquery.tipsy.js" type="text/javascript"></script>
     <script src="../../Scripts/app/namespace.js" type="text/javascript"></script>
     <script src="../../Scripts/translation/models.js" type="text/javascript"></script>
     <script src="../../Scripts/translation/translationView.js" type="text/javascript"></script>
@@ -25,11 +27,12 @@
         </div>
         <div class="clear"></div>
         <div>
-            <ul id="results"> </ul>
+            <ul id="results" class="bareList"> </ul>
         </div>
     </div>
     <div id="translationsSessionForm" class="sessionWindow">
-        No translations are currently flagged for saving.
+        <div class="sessionStatusText">No translations are currently flagged for saving.</div>
+        <a id="saveAll" class="button midButton_disabled save">Save All</a>
     </div>
     </form>
     <script type="text/javascript">

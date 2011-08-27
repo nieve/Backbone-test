@@ -370,7 +370,8 @@ hr
 
 .sessionWindow
 {
-	width:300px;
+	width:400px;
+	height: 40px;
 	border-color:Black;
 	border-width:thin;
 	border-style:solid;
@@ -400,6 +401,30 @@ hr
 	cursor: pointer;
 	background-position: 0px;
 	background-repeat: no-repeat;
+}
+
+ul.bareList li
+{
+	list-style-type:none;
+}
+
+.midButton
+{
+	padding: 4px 4px 2px 22px;
+	color: #565656;
+	background-position: 2px;
+}
+
+.midButton_disabled
+{
+	padding: 4px 4px 2px 22px;
+	color: Silver;
+	background-position: 2px;
+}
+
+.midButton_disabled:hover,.midButton_disabled:active
+{
+	color:Silver;
 }
 
 .save

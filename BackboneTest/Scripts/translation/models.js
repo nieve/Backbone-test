@@ -5,7 +5,7 @@
             else return true;
         },
         to_s: function () {
-            return 'key: ' + this.get('Key') + ' value: ' + this.get('Value') + '\r\n';
+            return 'key: ' + this.get('Key') + ' / value: ' + this.get('Value');
         },
         url: function () { return '/translation'; }
     });
