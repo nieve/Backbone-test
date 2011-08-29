@@ -3,18 +3,17 @@
         el: "#translationsSessionForm",
         emptyMessage: 'No translations are currently flagged for saving.',
         initialize: function (options) {
-            _.bindAll(this, "addTranslationToSession");
+            _.bindAll(this, "addTranslationToSession", "saveAll");
             options.vents.bind('saveTranslation', this.addTranslationToSession);
         },
+        events: { "click #saveAll": "saveAll" },
         collection: new this.TranslationManager.Translations(),
         addTranslationToSession: function (translation) {
             this.collection.add(translation);
             var text = '';
             if (this.collection.isEmpty()) {
-                $(this.el).children('#saveAll').removeClass('midButton');
-                $(this.el).children('#saveAll').addClass('midButton_disabled');
+                this.resetSession();
                 text = this.emptyMessage;
-                $(this.el).attr('original-title', '');
             } else {
                 $(this.el).children('#saveAll').removeClass('midButton_disabled');
                 $(this.el).children('#saveAll').addClass('midButton');
@@ -23,6 +22,20 @@
                 $(this.el).attr('title', this.setTooltip());
             }
             $(this.el).children('.sessionStatusText').html(text);
+        },
+        saveAll: function () {
+            this.collection.each(function (translation) {
+                translation.save();
+            });
+            this.collection.reset();
+            this.resetSession();
+            $(this.el).children('.sessionStatusText').html(this.emptyMessage);
+        },
+        resetSession: function () {
+            $(this.el).children('#saveAll').removeClass('midButton');
+            $(this.el).children('#saveAll').addClass('midButton_disabled');
+            $(".tipsy").remove();
+            $(this.el).unbind('mouseenter mouseleave');
         },
         setTooltip: function () {
             var text = 'translations ready to be saved:<br/>';

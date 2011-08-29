@@ -89,6 +89,7 @@
   <ItemGroup>
     <Content Include="Content\tipsy.css" />
     <Content Include="Global.asax" />
+    <Content Include="images\add.png" />
     <Content Include="images\save.png" />
     <Content Include="Scripts\app\namespace.js" />
     <Content Include="Scripts\lib\backbone.js" />
