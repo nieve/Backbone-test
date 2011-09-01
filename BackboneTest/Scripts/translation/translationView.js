@@ -1,5 +1,5 @@
-$(function () {
-    this.TranslationManager.TranslationView = Backbone.View.extend({
+(function () {
+    TranslationManager.TranslationView = Backbone.View.extend({
         tagName: "li",
         events: {
             "click .button.add": "addTranslation",
@@ -20,4 +20,4 @@ $(function () {
             this.model.set({ Value: this.$(".valueInput").val() });
         }
     });
-});
+})();

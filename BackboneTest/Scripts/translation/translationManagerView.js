@@ -1,10 +1,10 @@
 ﻿$(function () {
-    var TranslationView = this.TranslationManager.TranslationView;
-    var Translation = this.TranslationManager.Translation;
-    var Search = this.TranslationManager.Search;
-    var Translations = this.TranslationManager.Translations;
+    var TranslationView = TranslationManager.TranslationView;
+    var Translation = TranslationManager.Translation;
+    var Search = TranslationManager.Search;
+    var Translations = TranslationManager.Translations;
 
-    this.TranslationManager.TranslationManagerView = Backbone.View.extend({
+    TranslationManager.TranslationManagerView = Backbone.View.extend({
         el: "form",
         model: new Search(),
 

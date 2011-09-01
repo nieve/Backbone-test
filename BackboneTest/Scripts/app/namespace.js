@@ -1,5 +1,5 @@
 ﻿// Global namespace
 
-$(function () {
-    this.TranslationManager = {};
-});
+(function () {
+  TranslationManager = {};
+})();

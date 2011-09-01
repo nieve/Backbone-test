@@ -1,5 +1,5 @@
 ﻿$(function () {
-    this.TranslationManager.SessionView = Backbone.View.extend({
+    TranslationManager.SessionView = Backbone.View.extend({
         el: "#translationsSessionForm",
         emptyMessage: 'No translations are currently flagged for saving.',
         initialize: function (options) {
@@ -7,7 +7,7 @@
             options.vents.bind('saveTranslation', this.addTranslationToSession);
         },
         events: { "click #saveAll": "saveAll" },
-        collection: new this.TranslationManager.Translations(),
+        collection: new TranslationManager.Translations(),
         addTranslationToSession: function (translation) {
             this.collection.add(translation);
             var text = '';

@@ -38,8 +38,8 @@
     <script type="text/javascript">
         $(function () {
             var vents = _.extend({}, Backbone.Events);
-            var sessionView = new this.TranslationManager.SessionView({ vents: vents });
-            var someView = new this.TranslationManager.TranslationManagerView({ vents: vents });
+            var sessionView = new TranslationManager.SessionView({ vents: vents });
+            var someView = new TranslationManager.TranslationManagerView({ vents: vents });
         });
     </script>
     <script id="resultsDisplay" type="text/x-jquery-tmpl">
