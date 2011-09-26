@@ -5,9 +5,9 @@
 </asp:Content>
 <asp:Content ID="js" ContentPlaceHolderID="JsContent" runat="server">
     <link href="../../Content/tipsy.css" rel="stylesheet" type="text/css" />
-    <script src="../../Scripts/lib/jquery-1.6.1.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/lib/jquery.js" type="text/javascript"></script>
     <script src="../../Scripts/lib/jquery.tmpl.min.js" type="text/javascript"></script>
-    <script src="../../Scripts/lib/underscore-min.js" type="text/javascript"></script>
+    <script src="../../Scripts/lib/underscore.js" type="text/javascript"></script>
     <script src="../../Scripts/lib/backbone.js" type="text/javascript"></script>
     <script src="../../Scripts/lib/jquery.tipsy.js" type="text/javascript"></script>
     <script src="../../Scripts/app/namespace.js" type="text/javascript"></script>
@@ -23,7 +23,7 @@
     <form id="login-form" >
     <div class="rightSide">
         <div class="searchWindow">
-          Search for values: <input type="text" id="input" />
+          Search for values: <input type="text" class="searchInput" />
         </div>
         <div class="clear"></div>
         <div>

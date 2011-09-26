@@ -1,5 +1,5 @@
-﻿$(function () {
-    var Translation = Backbone.Model.extend({
+﻿(function () {
+    TranslationManager.Translation = Backbone.Model.extend({
         isNew: function () {
             if (this.get('Id')) return false;
             else return true;
@@ -12,7 +12,7 @@
     TranslationManager.Search = Backbone.Model.extend({});
 
     TranslationManager.Translations = Backbone.Collection.extend({
-        model: Translation,
+        model: TranslationManager.Translation,
         url: function () { return '/search'; }
     });
-});
+})();

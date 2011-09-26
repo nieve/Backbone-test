@@ -11,8 +11,8 @@
 #   - dist/**/*.js
 #
 src_files:
-    - BackboneTest/Scripts/lib/jquery-1.6.1.min.js
-    - BackboneTest/Scripts/lib/underscore-min.js
+    - BackboneTest/Scripts/lib/jquery.js
+    - BackboneTest/Scripts/lib/underscore.js
     - BackboneTest/Scripts/lib/jquery.tmpl.min.js
     - BackboneTest/Scripts/lib/json2.js
     - BackboneTest/Scripts/lib/backbone.js
@@ -46,6 +46,8 @@ stylesheets:
 #   - helpers/**/*.js
 #
 helpers:
+    - helpers/sinon.js
+    - helpers/jasmine-sinon.js
 
 # spec_files
 #
@@ -80,3 +82,4 @@ src_dir:
 # spec_dir: spec/javascripts
 #
 spec_dir:
+    - spec/javascripts
