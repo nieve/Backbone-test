@@ -15,6 +15,10 @@ namespace BackboneTest
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute("Templates",
+                "Templates/{name}",
+                new {controller = "Templates", action = "Index"});
+
             routes.MapRoute(
                 "search",
                 "search/",
@@ -29,7 +33,7 @@ namespace BackboneTest
 
             routes.MapRoute(
                 "Default",                                              // Route name
-                "{controller}/{action}/{id}",                           // URL with parameters
+                "Home/{action}/{id}",                           // URL with parameters
                 new { controller = "Home", action = "Index", id = "" }  // Parameter defaults
             );
 

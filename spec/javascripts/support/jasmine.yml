@@ -48,6 +48,7 @@ stylesheets:
 helpers:
     - helpers/sinon.js
     - helpers/jasmine-sinon.js
+    - helpers/jasmine-jquery.js
 
 # spec_files
 #

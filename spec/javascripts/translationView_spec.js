@@ -1,7 +1,7 @@
 describe("translationView", function(){
   beforeEach(function(){
     this.vents = _.extend({}, Backbone.Events);
-    this.model = new Backbone.Model({Value: 'Tama Hills'});
+    this.model = new Backbone.Model({Value: 'Tama Hills', Key: 'place'});
     this.view = new TranslationManager.TranslationView({
       model: this.model, 
       vents: this.vents
@@ -24,6 +24,20 @@ describe("translationView", function(){
     it("saves translation event", function(){
       this.view.updateTranslation();
       expect(this.model.get('Value')).toEqual("Pom Poko");
+    });
+  });
+  
+  describe("render", function(){
+    beforeEach(function(){
+      jasmine.getFixtures().fixturesPath = '/BackboneTest/Views/Templates';
+      loadFixtures("Result.ascx");
+      this.renderedView = this.renderedView || this.view.render();
+    });
+    it("creates a translation value paragraph", function(){
+      expect(this.renderedView).toContain('p.translationValue');
+    });
+    it("displays the view model value property", function(){
+      expect(this.renderedView).toContain('p input[value="Tama Hills"]');
     });
   });
 });
