@@ -14,16 +14,18 @@
     <script src="../../Scripts/translation/models.js" type="text/javascript"></script>
     <script src="../../Scripts/translation/translationView.js" type="text/javascript"></script>
     <script src="../../Scripts/translation/sessionView.js" type="text/javascript"></script>
-    <script src="../../Scripts/translation/translationManagerView.js" type="text/javascript"></script>
+    <script src="../../Scripts/translation/SearchView.js" type="text/javascript"></script>
+    <script src="../../Scripts/app/app.js" type="text/javascript"></script>
 </asp:Content>
 
 <asp:Content ID="indexContent" ContentPlaceHolderID="MainContent" runat="server">
 	
     <h2><%= Html.Encode(ViewData["Message"]) %></h2>
-    <form id="login-form" >
+    <form id="login-form" action="/searchfor">
     <div class="rightSide">
         <div class="searchWindow">
-          Search for values: <input type="text" class="searchInput" />
+          Search for values: <input name="term" type="text" class="searchInput" />
+          <input value="Search" class="search" type="submit" />
         </div>
         <div class="clear"></div>
         <div>
@@ -37,9 +39,7 @@
     </form>
     <script type="text/javascript">
         $(function () {
-            var vents = _.extend({}, Backbone.Events);
-            var sessionView = new TranslationManager.SessionView({ vents: vents });
-            var someView = new TranslationManager.TranslationManagerView({ vents: vents });
+            app.initialize();
         });
     </script>
     <% Html.RenderAction("Index", "Templates", new {name="Result"}); %>

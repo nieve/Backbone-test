@@ -6,7 +6,6 @@ namespace BackboneTest.Controllers
     {
         public PartialViewResult Index(string name)
         {
-            //HttpContext.Response.ContentType = "text/html";
             return PartialView(name);
         }
     }

@@ -2,7 +2,7 @@ describe("translationView", function(){
   beforeEach(function(){
     this.vents = _.extend({}, Backbone.Events);
     this.model = new Backbone.Model({Value: 'Tama Hills', Key: 'place'});
-    this.view = new TranslationManager.TranslationView({
+    this.view = new tm.TranslationView({
       model: this.model, 
       vents: this.vents
     });

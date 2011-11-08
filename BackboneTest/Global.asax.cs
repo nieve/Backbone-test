@@ -3,13 +3,13 @@ using System.Linq;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Raven.Client.Document;
+using TemplatesProgressiveEnhancement;
 using TranslationDto;
-using JsonValueProviderFactory = Microsoft.Web.Mvc.JsonValueProviderFactory;
 
 namespace BackboneTest
 {
 
-    public class MvcApplication : System.Web.HttpApplication
+    public class MvcApplication : JsDegradeableApplication
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
@@ -19,6 +19,11 @@ namespace BackboneTest
                 "Templates/{name}",
                 new {controller = "Templates", action = "Index"});
 
+            routes.MapRoute("searchfor",
+                "searchfor",
+                new {controller = "Search", action = "SearchFor"}
+            );
+            
             routes.MapRoute(
                 "search",
                 "search/",
@@ -33,7 +38,7 @@ namespace BackboneTest
 
             routes.MapRoute(
                 "Default",                                              // Route name
-                "Home/{action}/{id}",                           // URL with parameters
+                "{controller}/{action}/{id}",                           // URL with parameters
                 new { controller = "Home", action = "Index", id = "" }  // Parameter defaults
             );
 
@@ -41,6 +46,7 @@ namespace BackboneTest
 
         protected void Application_Start()
         {
+            ConfigureTemplateRendering().WithDefaults();
             AreaRegistration.RegisterAllAreas();
             StoreSingleton.Init();
             RegisterRoutes(RouteTable.Routes);

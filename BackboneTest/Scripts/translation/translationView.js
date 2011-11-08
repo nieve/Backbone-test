@@ -1,5 +1,5 @@
 (function () {
-    TranslationManager.TranslationView = Backbone.View.extend({
+    tm.TranslationView = Backbone.View.extend({
         tagName: "li",
         events: {
             "click .button.add": "addTranslation",

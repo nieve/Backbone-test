@@ -1,5 +1,5 @@
-﻿$(function () {
-    TranslationManager.SessionView = Backbone.View.extend({
+﻿(function () {
+    tm.SessionView = Backbone.View.extend({
         el: "#translationsSessionForm",
         emptyMessage: 'No translations are currently flagged for saving.',
         initialize: function (options) {
@@ -7,7 +7,7 @@
             options.vents.bind('saveTranslation', this.addTranslationToSession);
         },
         events: { "click #saveAll": "saveAll" },
-        collection: new TranslationManager.Translations(),
+        collection: new tm.Translations(),
         addTranslationToSession: function (translation) {
             this.collection.add(translation);
             var text = '';
@@ -43,4 +43,4 @@
             return tls.reduce(function (res, current) { return res + current + '<br/>'; }, text);
         }
     });
-});
+})();

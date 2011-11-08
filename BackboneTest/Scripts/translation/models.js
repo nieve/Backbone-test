@@ -1,5 +1,5 @@
 ﻿(function () {
-    TranslationManager.Translation = Backbone.Model.extend({
+    tm.Translation = Backbone.Model.extend({
         isNew: function () {
             if (this.get('Id')) return false;
             else return true;
@@ -9,10 +9,26 @@
         },
         url: function () { return '/translation'; }
     });
-    TranslationManager.Search = Backbone.Model.extend({});
 
-    TranslationManager.Translations = Backbone.Collection.extend({
-        model: TranslationManager.Translation,
-        url: function () { return '/search'; }
+    tm.Translations = Backbone.Collection.extend({
+        model: tm.Translation,
+        url: function () { return '/search'; },
+        search: function(searchTerm){
+            if (searchTerm && searchTerm.length >= 1) {
+                this.fetch({ data: { term: searchTerm} });
+            }
+            else {
+                this.reset();
+            }
+        }
+    });
+    tm.Router = Backbone.Router.extend({
+        routes: {
+            "": "search",
+            "searchfor?term=:searchTerm": "search"
+        },
+        search: function(searchTerm){
+            app.translations.search(searchTerm);
+        }
     });
 })();

@@ -18,9 +18,10 @@ src_files:
     - BackboneTest/Scripts/lib/backbone.js
     - BackboneTest/Scripts/app/namespace.js
     - BackboneTest/Scripts/translation/models.js
-    - BackboneTest/Scripts/translation/sessionView.js
-    - BackboneTest/Scripts/translation/translationManagerView.js
     - BackboneTest/Scripts/translation/translationView.js
+    - BackboneTest/Scripts/translation/sessionView.js
+    - BackboneTest/Scripts/translation/SearchView.js
+    - BackboneTest/Scripts/app/app.js
 
 # stylesheets
 #
