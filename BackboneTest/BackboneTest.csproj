@@ -89,6 +89,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="images\add.png" />
     <Content Include="images\save.png" />
+    <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\namespace.js" />
     <Content Include="Scripts\lib\backbone.js" />
     <Content Include="Scripts\lib\jquery.js" />
@@ -102,7 +103,7 @@
     <Content Include="Scripts\lib\underscore.js" />
     <Content Include="Scripts\translation\models.js" />
     <Content Include="Scripts\translation\sessionView.js" />
-    <Content Include="Scripts\translation\translationManagerView.js" />
+    <Content Include="Scripts\translation\searchView.js" />
     <Content Include="Scripts\translation\translationView.js" />
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Shared\LogOnUserControl.ascx" />

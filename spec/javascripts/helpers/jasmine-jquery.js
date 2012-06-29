@@ -72,12 +72,14 @@ jasmine.Fixtures.prototype.sandbox = function(attributes) {
 
 jasmine.Fixtures.prototype.createContainer_ = function(html) {
   var container;
+  console.log("checking html");
   if(html instanceof jQuery) {
     container = jQuery('<div id="' + this.containerId + '" />');
     container.html(html);
   } else {
     container = '<div id="' + this.containerId + '">' + html + '</div>'
   }
+  console.log("container is: " + container);
   jQuery('body').append(container);
 };
 

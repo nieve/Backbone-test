@@ -29,8 +29,11 @@ describe("translationView", function(){
   
   describe("render", function(){
     beforeEach(function(){
+      console.log("setting fixture path");
       jasmine.getFixtures().fixturesPath = '/BackboneTest/Views/Templates';
+      console.log("loading fixtures");
       loadFixtures("Result.ascx");
+      console.log("setting rendered view");
       this.renderedView = this.renderedView || this.view.render();
     });
     it("creates a translation value paragraph", function(){
